@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: ai-support-chatbot
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/health
+    envVars:
+      - key: ANTHROPIC_API_KEY
+        sync: false          # entered by hand in the Render dashboard, never committed
+      - key: DEMO_MODE
+        value: "0"
+      - key: CLAUDE_MODEL
+        value: claude-opus-5-5
+      - key: CLAUDE_EFFORT
+        value: low
+      - key: DAILY_MESSAGE_LIMIT
+        value: "150"         # caps API spend on the public demo
+      - key: RATE_LIMIT_PER_MINUTE
+        value: "10"
+      - key: ADMIN_TOKEN
+        generateValue: true
