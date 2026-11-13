@@ -6,7 +6,8 @@ questions 24/7 from the business's own information (services, prices, hours, pol
 
 Built with **Python · FastAPI · Claude API (Anthropic) · vanilla JS**.
 
-**Live demo:** _coming soon_
+**▶ Live demo: [ai-support-chatbot-u82s.onrender.com](https://ai-support-chatbot-u82s.onrender.com/)**
+Click the chat bubble in the bottom-right corner and ask in any language. The free server sleeps when idle, so the first load can take up to a minute.
 
 ![demo](docs/screenshot.jpg)
 
